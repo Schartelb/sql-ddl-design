@@ -11,6 +11,12 @@ CREATE TABLE region(
     name TEXT UNIQUE NOT NULL
 );
 
+CREATE TABLE category(
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
@@ -27,10 +33,5 @@ CREATE TABLE posts(
     location TEXT NOT NULL,
     region_id INT REFERENCES region
     cat_id INT REFERENCES category
-);
-
-CREATE TABLE category(
-    id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL
 );
 

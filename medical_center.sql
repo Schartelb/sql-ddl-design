@@ -5,6 +5,11 @@ CREATE DATABASE medical_center;
 
 \c medical_center;
 
+CREATE TABLE speciality(
+    id SERIAL PRIMARY KEY,
+    spec_name TEXT NOT NULL
+);
+
 CREATE TABLE doctors(
     id SERIAL PRIMARY KEY,
     name TEXT UNIQUE NOT NULL,
@@ -16,11 +21,6 @@ CREATE TABLE patients(
     id SERIAL PRIMARY KEY,
     name TEXT UNIQUE NOT NULL,
     phone VARCHAR(12) NOT NULL
-);
-
-CREATE TABLE speciality(
-    id SERIAL PRIMARY KEY,
-    spec_name TEXT NOT NULL
 );
 
 CREATE TABLE doctor_patient(
